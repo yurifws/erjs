@@ -1,8 +1,12 @@
 export default function HelloWorld() {
   const name = 'Daniel'
+  const title = <h1>Hello, { name }!!!</h1>
+
+  if(name === 'Daniel'){
+    return <h1 style={{background: 'red'}}>{name}</h1>
+  }
 
   return <div>
-    <h1>Hello, { name === 'Daniel' ? 'Daniel': name}!!!</h1>
-    <h1>Hello, { name }!!!</h1>
+    {title}
   </div>
 }

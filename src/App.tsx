@@ -1,13 +1,22 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import HelloWorld from './HelloWorld';
+
+const Componet = React.createElement('div', {style: {background: 'red'}}, 'Olá mundo')
+
+const HTMLElement = document.createElement('div')
+HTMLElement.style.background = 'red'
+HTMLElement.innerText = 'OLÁ MUNDO'
+
+console.log(Componet)
+console.dir(HTMLElement)
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <HelloWorld />
+        {Componet }
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Olá mundo!

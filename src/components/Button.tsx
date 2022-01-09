@@ -12,7 +12,6 @@ interface ButtonState {
 class Button extends Component<ButtonProps, ButtonState> {
 
   constructor(props: ButtonProps) {
-    console.log('constructor')
     super(props)
 
     this.state = {
@@ -21,14 +20,18 @@ class Button extends Component<ButtonProps, ButtonState> {
   }
 
   componentDidMount() {
-    console.log('componentDidMount')
     setTimeout(() => {
       this.setState({
         alreadyClicked: false
       })
       
-    console.log('rodou o timeout')
     }, 5000)
+  }
+  componentDidUpdate(prevProps: ButtonProps, prevState: ButtonState){
+    console.log('anterior', prevState)
+    console.log('atual', this.state)
+    console.log('anterior', prevProps)
+    console.log('atual', this.props)
   }
 
   render() {

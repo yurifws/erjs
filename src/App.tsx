@@ -17,11 +17,10 @@ function App() {
       <header className="App-header">
         
         {
-          !!post 
-          ? <Card title={"Card"} align='left'>
-              <Post post={post} totalComents={12} />
+          !!post &&
+            <Card title={"Card"} align='left'>
+                <Post post={post} totalComents={12} />
             </Card>
-          : <h1>404 - Post não encontrado</h1>
         }
         <button onClick={() => setPost(undefined)}>
           Remover post

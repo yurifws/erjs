@@ -1,35 +1,16 @@
-import { PropsWithChildren, ReactNode } from "react"
-
-//interface CardProps {
-//  title: string
-//}
-
-//outro modo de ser feito
-//export default function Card(props: PropsWithChildren<CardProps>) {
-
-//outro modo de ser feito
-//interface CardProps {
-//  title: string
-//  children?: ReactNode
-//}
+import { PropsWithChildren } from "react"
+import './Card.css'
 
 type CardProps = PropsWithChildren<{
   title: string
+  align?: 'center' | 'left' | 'right'
 }>
-
 
 export default function Card(props: CardProps) {
   console.log(props)
 
-  return <div
-    style={{
-      background: 'rgba(0,0,0,.25)',
-      borderRadius: 8,
-      padding: 16,
-      backgroundColor: 'red'
-    }}
-  >
+  return <div className={`Card ${props.align || 'center'}`}>
     <div>{props.title}</div>
-    { props.children}
+    {props.children}
   </div>
 }

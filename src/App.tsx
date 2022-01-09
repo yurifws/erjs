@@ -13,7 +13,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Card title={"Card"}>
+        <Card title={"Card"} align='left'>
+          <Post post={post} totalComents={12} />
+        </Card>
+        <Card title={"Card"} align='right'>
           <Post post={post} totalComents={12} />
         </Card>
 

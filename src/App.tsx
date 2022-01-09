@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
+import Card from './components/Card';
 import Post from './components/Post';
-import Sidebar from './components/Sidebar';
 
 
 function App() {
@@ -10,18 +10,13 @@ function App() {
     content: 'Lorem ipsum dolot sit amet'
   })
 
-//  setTimeout(() => {
-//    setPost({
-//      title: 'Titulo maneirissimo',
-//      content: 'Lorem ipsum dolot sit amet 2'
-//    })
-//
-//  }, 5000)
   return (
     <div className="App">
       <header className="App-header">
-        <Sidebar post={post}/>
-        <Post post={post} totalComents={12} />
+        <Card title={"Card"}>
+          <Post post={post} totalComents={12} />
+        </Card>
+
         
       </header>
     </div>

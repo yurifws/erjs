@@ -1,22 +1,31 @@
 import React, { useState } from 'react';
 import './App.css';
 import Card from './components/Card';
-import Post from './components/Post';
+import Post, { PostObject } from './components/Post';
 
 
 function App() {
-  const [post, setPost] = useState({
+  console.log('renderizou app')
+  const [post, setPost] = useState<PostObject | undefined>({
     title: 'Titulo maneiro',
     content: 'Lorem ipsum dolot sit amet'
   })
 
+
   return (
     <div className="App">
       <header className="App-header">
-        <Card title={"Card"} align='left'>
-          <Post post={post} totalComents={12} />
-        </Card>
         
+        {
+          !!post 
+          ? <Card title={"Card"} align='left'>
+              <Post post={post} totalComents={12} />
+            </Card>
+          : <h1>404 - Post não encontrado</h1>
+        }
+        <button onClick={() => setPost(undefined)}>
+          Remover post
+        </button>
       </header>
     </div>
   );
